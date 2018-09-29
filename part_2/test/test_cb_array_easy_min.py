@@ -2,7 +2,7 @@
 Unittests for CBArrayEasyMin.
 """
 
-
+# import unittest
 from unittest import TestCase
 from src.cb_array_easy_min import CBArrayEasyMin
 
@@ -85,3 +85,8 @@ class TestCBArrayEasyMin(TestCase):
         self.assertEqual(arr.get_min(), -1)
         arr.remove_all(-1)
         self.assertEqual(arr.get_min(), 2)
+
+"""
+if __name__ == '__main__':
+    unittest.main()
+"""
