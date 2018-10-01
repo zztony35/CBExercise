@@ -2,7 +2,7 @@
 Unittests for CBArray and CBArrayEasyMin.
 """
 
-# import unittest
+import unittest
 from unittest import TestCase
 from src.cb_array import CBArray
 from src.cb_array_easy_min import CBArrayEasyMin

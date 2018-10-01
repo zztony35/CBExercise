@@ -25,41 +25,40 @@ class CBArray:
         # Condition: when any of values in `content` is None
         elif not all(content):
             raise ValueError("All values in the list cannot be None")
+
         else:
+            self.Dtype = dtype
+            self.type = "CBArray"
+
             if not content:  # Condition: if `content` is empty
                 self.content = []
                 if dtype is None:
                     self.Dtype = int
-                else:
-                    self.Dtype = dtype
+
             elif all(isinstance(item, int) for item in content):
                 self.content = content
                 if dtype is None:
                     self.Dtype = int
                 elif dtype != int and dtype != float:
                     raise ValueError("Incorrect dtype input")
-                else:
-                    self.Dtype = dtype
-            elif not all(isinstance(item, int) for item in content) and all(isinstance(item, (int, float)) for item in content):
+
+            elif not all(isinstance(item, int) for item in content) and all(
+                    isinstance(item, (int, float)) for item in content):
                 self.content = content
                 if dtype is None:
                     self.Dtype = float
                 elif dtype != float:
                     raise ValueError("Incorrect dtype input")
-                else:
-                    self.Dtype = dtype
+
             elif all(isinstance(item, str) for item in content):
                 self.content = content
                 if dtype is None:
                     self.Dtype = str
                 elif dtype != str:
                     raise ValueError("Incorrect dtype input")
-                else:
-                    self.Dtype = dtype
+
             else:
                 raise ValueError("Invalid argument type")
-
-            self.type = "CBArray"
 
     @property
     def dtype(self):

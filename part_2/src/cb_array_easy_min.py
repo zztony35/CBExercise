@@ -13,9 +13,12 @@ class CBArrayEasyMin(CBArray):
     make this implementation as efficient as possible, assuming that insertion, deletion and update happens in
     relatively lower frequency, but `get_min` method is called at a much higher frequency.
     """
+
     def __init__(self, content, dtype=None):
-        super(CBArrayEasyMin, self).__init__(content, dtype=None)
+        super(CBArrayEasyMin, self).__init__(content, dtype)
+
         self.min = []
+
         if not self.content:
             pass
         else:
@@ -156,7 +159,8 @@ class CBArrayEasyMin(CBArray):
                 total_content.extend(self.content)
                 total_content.extend(another_CBArray.content)
                 return CBArray(total_content, self.Dtype)
-            elif (self.Dtype == int and another_CBArray.Dtype == float) or (self.Dtype == float and another_CBArray.Dtype == int):
+            elif (self.Dtype == int and another_CBArray.Dtype == float) or (
+                    self.Dtype == float and another_CBArray.Dtype == int):
                 total_content = []
                 total_content.extend(self.content)
                 total_content.extend(another_CBArray.content)
